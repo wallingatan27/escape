@@ -1,0 +1,111 @@
+.halo{
+    height: 500px;
+    width: 100%;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+ }
+  
+ .first-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+ }
+
+ .text{
+     position: absolute;
+     font-size: 200px;
+     margin-top: 10%;
+    margin-left: 16%;
+     z-index: 1;
+     color: white;
+ }
+
+ .sub {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-shadow: rgb(180, 177, 177);
+    font-size: 40px;
+    margin-top: 10%;
+    margin-left: 16%;
+ }
+ .deer-overlay {
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 25%;
+    height: 70%;
+    width: 50%;
+    z-index: 2;
+    
+ }
+
+ 
+
+
+
+ .left-overlay {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    margin-top: 22%;
+     z-index: 4;
+     
+ }
+
+ .right-overlay {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    margin-top: 22%;
+   margin-left: 50%;
+     z-index: 4;
+ }
+
+ .ground {
+    height: 500px;
+    width:50%;
+    float: left;
+    margin-top: 5%;
+     }
+
+.info {
+    height: 40%;
+    width: 40%;
+    
+    margin: 10%;
+    
+    
+}
+
+.led {
+
+    height: 500px;
+    width: 50%;
+    float: right;
+    margin-top: 5%;
+}
+
+.contact{
+    height: 40%;
+    width: 40%;
+    
+    margin: 10%;
+}
+
+
+
+
+  .btn-primary {
+    margin-top: 30%;
+    margin-left: 40%;
+    position: absolute;
+    z-index: 3;
+    
+    color: white;
+  }

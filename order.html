@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/adminstyle.css">
+    <title>Products</title>
+
+    <!--hämtar product-->
+
+
+    <script>
+
+        //for products
+        function getPostId(id) {
+            $.getJSON("http://localhost:3000/order/hamta/" + id, function (data) {
+                showProductInForm(data);
+            });
+        }
+
+        function showProductInForm(data) {
+            let myId = $("#txtId");
+            let myOrder =$('#txtOrder');
+            let myTime =$('#txtTime');
+            let myStatus = $("#txtStatus");
+            let myName = $("#txtName");
+
+            
+
+            myId.val(data.id);
+            myOrder.val(data.orderID);
+            myTime.val(data.create_time);
+            myStatus.val(data.status);
+            myName.val(data.given_name);
+           
+
+            $('#delModal').modal('show');
+        }
+
+        function getPosta() {
+            $.getJSON("http://localhost:3000/order/hamtar", function (data) {
+                showProductsInTable(data);
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+
+
+            });
+        }
+
+        function updatePost() {
+            let myId = $("#delModal #txtId").val();
+            let myOrder = $("#delModal #txtOrder").val();
+            let myTime = $("#delModal #txtTime").val();
+            let myStatus = $("#delModal #txtStatus").val();
+            let myName = $("#delModal #txtName").val();
+            
+
+            $.ajax({
+                type: "PATCH",
+                url: "http://localhost:3000/order/" + myId,
+                data: JSON.stringify({"orderID": myOrder, "create_time": myTime, "status": myStatus,"given_name":myName, "id": myId }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) { getPosta(); $('#delModal').modal('hide') },
+                failure: function (errMsg) {
+                    alert(errMsg); 
+                }
+
+            });
+        }
+
+        function deletePost() {
+            let myId = $("#delModal #txtId").val();
+            alert(myId);
+            $.ajax({
+                type: "DELETE",
+                url: "http://localhost:3000/order/del/" + myId,
+                success: function (data) { getPosta(); $('#delModal').modal('hide') },
+                failure: function (errMsg) {
+                    alert("failure:" + errMsg.title);
+                }
+            });
+        }
+
+       
+
+        function showProductsInTable(data) {
+            let table = $('#tblPostn');
+            table.empty();
+            table.append("<thead>");
+            table.append("<th>" + "id" + "</th>");
+            table.append("<th>" + "OrderID" + "</th>");
+            table.append("<th>" + "Date" + "</th>");
+            table.append("<th>" + "Order Status" + "</th>");
+            table.append("<th>" + "Name of buyer" + "</th>");
+            table.append("</thead>");
+            table.append("<tbody id ='myTable'>");
+            $.each(data, function (id, order) {
+               
+               table.append("<tr>" +
+                "<td><a href='#' onclick=getPostId('" + order.id + "')>"
+                    + order.id + "</a></td>" +
+                    "<td>" + order.orderID + "</td>" +
+                   "<td>" + order.create_time + "</td>" +
+                   "<td>" + order.status + "</td>" +
+                   "<td>" + order.given_name + "</td>" +
+                   +
+                   "</tr>"
+               );
+           });
+           table.append("</tbody>");
+            
+        }
+
+        
+
+        
+
+       
+    </script>
+</head>
+
+<body onload="getPosta()">
+
+      <!--navbar-->
+      <nav class="navbar navbar-expand-lg  navbar-costum sticky-top">
+        <a class="navbar-brand" href="http://users.du.se/~h18jniem/ik1005/website.html"></a>
+        <img class="logo" 
+            alt="brand">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index2.html">view Escape<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                
+                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="order.html">Manage orders </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin.html">Manage products </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reviews.html">Manage reviews </a>
+                </li>
+
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control" id="myInput" type="text" placeholder="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <h2>Products</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-10, s">
+                <h4>Reviews</h4>
+            </div>
+            
+            <div class="modal fade" id="myAddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            
+                        
+                        </div>
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row" style="margin-top: 25px;">
+            <div class="col">
+                <table class="table table-striped" id="tblPostn"></table>
+
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="modal " id="delModal" tabindex="-1" role="dialog" aria-labelledby="delModallabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="delModallabel">Edit</h4>
+                <button type="button" class="close" data-dismiss="modal" arial-label="close">
+                    <span arial-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                id:<input type="text" id="txtId" class="form-control" readonly="true">
+                OrderID:<input type="text" id="txtOrder" class="form-control">
+                Date: <input type="text" id="txtTime" class="form-control">
+                Order Status: <input type="text" id="txtStatus" class="form-control">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+               
+                <button type="button" onclick="deletePost()" class="btn btn-primary">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+
+</body>
+
+</html>

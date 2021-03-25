@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styleshopping.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+  <title>Shopping cart</title>
+</head>
+
+<body>
+ 
+  <div class="container-fluid">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"></a>
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index2.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shopping.html">Contact</a>
+          </li>
+        </ul>
+
+
+        <li class="basket">
+          <a href="profil.html">
+              <ion-icon name="person-circle-outline"></ion-icon>
+          </a>
+        </li>
+        <li class="basket">
+          <a href="shopping.html">
+            <ion-icon name="cart" md="cart"></ion-icon>Cart
+          </a>
+        </li>
+  
+      </div>
+  
+    </nav>
+
+    <!--Main-->
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col-12">
+          <div id="shoppingCartDiv" class="cardcheckout card s-3">
+            <!--div container for all products currently in our shoppingcart array-->
+          </div>
+        </div>
+        <div>
+          <div id="ordDiv" class="orderdiv">
+           
+            <!--div that shows the order total-->
+          </div>
+        </div>
+      </div>
+      <div class="paypal" id="paypal-button-container"> </div>
+
+      <script
+
+      src="https://www.paypal.com/sdk/js?client-id=Afp14_nj7t-VdJ513YLvBujyjsjosDqAvG6sKN6zZ0YzcmWE_YoPxIoWU7lCgDfpzX-gMgV8hk0ALfJw"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+     
+    </script>
+    
+    
+    
+      <script>
+        
+      </script>
+
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="mainfooter" role="contentinfo">
+      <div class="footer-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>Contact</h4>
+              <ul class="list-unstyled">          
+                <li><a href="#">Payment Center</a></li>
+                <li><a href="#">Contact Directory</a></li>
+                <li><a href="#">Forms</a></li>
+                <li><a href="/admin.html">Admin</a></li>
+               
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>Policy</h4>
+              <ul class="list-unstyled">       
+                <li><a href="#">Accessibility</a></li>    
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Webmaster</a></li>
+              </ul>
+            </div>
+          </div>
+         
+          <div class="col-md-2">
+            <h4>Social</h4>
+                <ul class="social-network social-circle">
+                 <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-twitter"></i></a></li>
+                 <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-instagram"></i></a></li>
+                </ul>				
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-12 copy">
+          <p class="text-center">&copy; Copyright 2021 - Escape.  All rights reserved.</p>
+        </div>
+      </div>
+    
+    
+      </div>
+      </div>
+    </footer>
+    <!-- Container div ends here-->
+  </div>
+
+  <!-- Optional JavaScript -->
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <script src="cart.js"></script>
+  <script>
+    window.onload = function () {
+      shoppingcartCard();
+      totalPrice();
+    };
+   
+   
+
+  paypal.Buttons({
+    
+    createOrder: function(data, actions ,req) {
+    // const authcookie = req.cookies.authcookie;
+   //res.redirect("/login.html");
+  
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+               value: totalPrice(),
+              
+          }
+        }]
+      });
+    },
+        onApprove: function (data, actions, res,req ) {
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(function(details) {
+        
+        console.log(details); 
+       
+        alert('Transaction completed by ' + details.payer.name.given_name);
+          window.location.replace("/thankyou.html");
+        return fetch('/paypal-transaction-complete', {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        orderID: data.orderID,
+                        create_time: details.create_time,
+                        status: details.status,
+                        given_name: details.payer.name.given_name
+                    })
+                    
+                });
+        // dbQueries.addOrder(orderID);  payer_id = CDCD5R26YUX5C , CDCD5R26YUX5C , new accout CDCD5R26YUX5C
+  
+        
+        // This function shows a transaction success message to your buyer.
+        
+        
+      });
+    }
+  
+
+    }).render('#paypal-button-container');
+
+  </script>
+</body>
+
+</html>

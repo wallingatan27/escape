@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\Desktop\\GridMenu-master"
+		},
+		{
+			"path": "..\\files"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "GridMenu-master"
+	}
+}

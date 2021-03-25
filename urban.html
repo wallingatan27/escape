@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="Stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo2.css" />
+  
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+ 
+
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+
+    <title>URBAN-Escape</title>
+
+    
+  </head>
+  <body class="demo-2 loading">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"></a>
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index2.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shopping.html">Contact</a>
+          </li>
+        </ul>
+
+
+        <li class="basket">
+          <a href="profil.html">
+              <ion-icon name="person-circle-outline"></ion-icon>
+          </a>
+        </li>
+        <li class="basket">
+          <a href="shopping.html">
+            <ion-icon name="cart" md="cart"></ion-icon>Cart
+          </a>
+        </li>
+  
+      </div>
+  
+    </nav>
+    
+
+
+
+    <svg class="hidden">
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <title>arrow</title>
+        <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+      </symbol>
+      <symbol id="icon-drop" viewBox="0 0 24 24">
+        <title>drop</title>
+        <path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+      </symbol>
+    </svg>
+    <main>
+      <div class="message">To see the menu, please view on a larger screen.</div>
+      <div class="content content--fixed">
+      
+        <button class="menu-trigger">+ explore</button>
+      </div>
+     
+      <nav class="grim">
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--1"></div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--2"></div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--3"></div>
+          <div class="grim__item-content">
+            <div class="grim__item-inner">
+              <button class="menu-trigger menu-trigger--close">- close</button>
+            </div>
+          </div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--4"></div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--5"></div>
+          <a href="/index2.html"  class="grim__item-img grim__item-img--1" transition="5"></a>
+          <a class="grim__link grim__item-content">
+            <div class="grim__item-inner">
+              <h3 class="grim__item-title">Home</h3>
+             
+            </div>
+          </a>
+
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--6"></div>
+          <a href="/sale.html"  class="grim__item-img grim__item-img--1" transition="5" style="background-image: url(img/sale.jpg);"></a>
+          <a class="grim__link grim__item-content">
+            <div class="grim__item-inner">
+              <h3 class="grim__item-title">Sale</h3>
+              <span class="grim__item-desc">Lift your spirits</span>
+            </div>
+          </a>
+          <div class="grim__item-bg grim__item-bg-cover grim__item-bg--6"></div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--7"></div>
+          <a href="/natur.html"  class="grim__item-img grim__item-img--2" transition="5" style="background-image: url(img/nature.jpg);"></a>
+          <a class="grim__link grim__item-content">
+            <div class="grim__item-inner">
+              <h3 class="grim__item-title">Nature</h3>
+              <span class="grim__item-desc">Find yourself</span>
+            </div>
+          </a>
+          <div class="grim__item-bg grim__item-bg-cover grim__item-bg--7"></div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--8"></div>
+           <a href="/website.html"  class="grim__item-img grim__item-img--3" transition="5" style="background-image: url(img/lion.jpg);"></a>
+           <a class="grim__link grim__item-content">
+            <div class="grim__item-inner" >
+              <h3 class="grim__item-title">Animals</h3>
+              <span class="grim__item-desc">Uncover beauty</span>
+            </div>
+          </a>
+          
+          <div class="grim__item-bg grim__item-bg-cover grim__item-bg--8"></div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--9"></div>
+          <a href="/berg.html"  class="grim__item-img grim__item-img--4" transition="5" style="background-image: url(img/berg.jpg);"></a>
+          <a class="grim__link grim__item-content">
+            <div class="grim__item-inner">
+              <h3 class="grim__item-title">Mountains</h3>
+              <span class="grim__item-desc">Feel nature</span>
+            </div>
+          </a>
+          <div class="grim__item-bg grim__item-bg-cover grim__item-bg--9"></div>
+        </div>
+        <div class="grim__item">
+          <div class="grim__item-bg grim__item-bg--10"></div>
+          <a href="/urban.html"  class="grim__item-img grim__item-img--5" transition="5" style="background-image: url(img/city.jpg);"></a>
+          <a class="grim__link grim__item-content">
+            <div class="grim__item-inner">
+              <h3 class="grim__item-title">Urban</h3>
+              <span class="grim__item-desc">Explore your limits</span>
+            </div>
+          </a>
+          <div class="grim__item-bg grim__item-bg-cover grim__item-bg--10"></div>
+        </div>
+      </nav>
+    </main>
+    <script src="js/demo.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/menu2.js"></script>
+  
+
+
+
+
+
+    <div>
+      <div id="content-4" class="content content--switch" style="background-image: url(img/bg-city.jpg); height: 850px;">
+       <div class="roww">
+        <h2 class="content__title">Urban</h2>
+        <div class="content__subtitle ">Explore your limits</div>
+      </div>
+    </div>
+    </div>
+   
+    
+    <!--products-->
+    <div id="cardContainer" class="card-deck">
+      
+      <!-- Container that will hold all the cards that creates dynamically -->
+    </div>
+   
+
+    <div class="container">
+      <div class="row">
+          <h2>Comments from users</h2>
+      </div>
+      <div class="row">
+        <button ><a href="/Comm/commentUrban.html">Comment Here!</a></button>
+      </div>
+      <div class="row">
+          <input class="form-control" id="myInput" type="text" placeholder="filter out a comment">
+      </div>
+      <div class="row" style="margin-top: 25px;">
+          <div class="col">
+              <table class="table table-striped" id="tblProduct"></table>
+
+          </div>
+      </div>
+  </div>
+
+  
+    <!--modal-->
+    <div class="modalcontainer">
+      <div class="modal fade" id="modalCar" tabindex="-1" role="dialog" aria-labelledby="txtName" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-sm-down" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="txtName"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img class="mbild"id="myImage">
+              <h4 id="txtName"></h4>
+              <p id="txtPrice"></p>
+              <h5 id="txtInfo"></h5>
+              <p id="txtMade"></p>
+              <button ><a href="/Comm/commentUrban.html">Comment Here!</a></button>
+            </div>
+  
+  
+            
+  
+            <script type="text/javascript">
+  
+              var titles = [];
+              var titleInput = document.getElementById("title");
+  
+              var messageBox = document.getElementById("display"); 
+
+  
+              function Allow() {
+                if (!user.title.value.match(/[a-zA-Z]$/) && user.title.value != "") {
+                  user.title.value = "";
+                  alert("Please Enter only alphabets");
+                }
+  
+                window.location.reload()
+              }
+  
+              function insert() {
+                titles.push(titleInput.value);
+                clearAndShow();
+              }
+  
+              function clearAndShow() {
+                titleInput.value = "";
+                messageBox.innerHTML = "";
+                messageBox.innerHTML += "" + titles.join("<br/> ") + "<br/>";
+              }
+  
+            </script>
+          
+  <div class="modal-footer">
+    <div class="box-1">
+      <div class="btn btn-one" id="addToCartBtn" data-dismiss="modal">
+        <span>PURCHASE</span>
+      </div>
+    </div>
+    <div class="box-1">
+      <div class="btn btn-one" data-dismiss="modal">
+        <span>CLOSE</span>
+      </div>
+    </div>
+   
+
+  </div>
+ 
+  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+   <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+  <script src="cart.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+   
+    
+    <script>
+      window.onload = function(){
+        getProdUrban();
+        getKoment();
+      }
+  
+      function getProdUrban() {
+        $.getJSON("http://localhost:3000/productsurban", function(data) {
+          showCards(data);
+        });
+      }
+     
+
+      function getPro(id) {
+        $.getJSON("http://localhost:3000/productid/" + id, function(data){
+         console.log(data.name + " från getProduct");
+          showProductInForm(data);
+        });
+      }
+
+     
+      
+  
+      function showCards(data) {
+      let cardDeck = $("#cardContainer")
+      cardDeck.empty();
+
+      let cardRow = document.createElement("div");
+      cardRow.setAttribute("class", "row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-sm-1");
+
+      for (let i = 0; i < data.length; i++) {
+
+        let cardCol = document.createElement("div");
+        cardCol.setAttribute("class", "col mb-4");
+
+        let card = document.createElement("div");
+        card.setAttribute("class", "card h-80");
+
+        let cardImg = document.createElement("img");
+        cardImg.setAttribute("class", "card-img-top");
+      
+        cardImg.src += data[i].pic; 
+        
+        
+
+        let cardBody = document.createElement("div");
+        cardBody.setAttribute("class", "card-body");
+
+        let cardTitle = document.createElement("h5");
+        cardTitle.setAttribute("class", "card-title");
+        cardTitle.innerHTML += data[i].name;
+
+        let cardPrice = document.createElement("h6");
+        cardPrice.setAttribute("class", "card-price");
+        cardPrice.innerHTML += "Price: " + data[i].price + " $";
+
+        let cardText = document.createElement("p");
+        cardText.setAttribute("class", "card-text");
+        cardText.innerText += "The Artist: " + data[i].made;
+
+
+        let cardBtn = document.createElement("button");
+        cardBtn.setAttribute("class", "btn btn-primary");
+        cardBtn.setAttribute("type", "button");
+        cardBtn.setAttribute("data-toggle", "modal");
+        cardBtn.setAttribute("data-target", "#modalCar");
+        cardBtn.addEventListener("click", function () { getPro(data[i].id) });
+        cardBtn.innerHTML += "Info";
+
+        cardRow.append(cardCol);
+        cardCol.append(card);
+        card.append(cardImg);
+        card.append(cardBody);
+        cardBody.append(cardTitle);
+        cardBody.append(cardPrice);
+        cardBody.append(cardText);
+        cardBody.append(cardBtn);
+      };
+      cardDeck.append(cardRow);
+    }
+  
+    function showProductInForm(data) {
+
+let myName = document.getElementById("txtName");
+myName.innerHTML = data.name;
+
+let myImg = document.getElementById("myImage");
+myImg.setAttribute("class", "myImgcard");
+myImg.src = data.pic; 
+
+let myDescription = document.getElementById("txtInfo");
+
+myDescription.innerHTML = "Info: 120 x 180 cm "+ data.info;
+
+let myPrice = document.getElementById("txtPrice");
+myPrice.innerHTML = "Price: " + data.price + " $";
+
+
+let myMade = document.getElementById("txtMade");
+myMade.innerHTML = "The Artist: " + data.made;
+
+document.getElementById("addToCartBtn").onclick = function add() {
+  addItem(data);
+  alert("Product: " + data.name + "\nhas been added to the cart.");
+}
+}
+
+
+
+
+function getKoment() {
+            $.getJSON("http://localhost:3000/kommentarurban", function (data) {
+                showProductsInTable(data);
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+
+
+            });
+        }
+
+
+
+        function showProductsInTable(data) {
+            let table = $("#tblProduct");
+            table.empty();
+            table.append("<thead>");
+            table.append("<th>" + "Product" + "</th>");
+           
+            table.append("<th>" + "Name" + "</th>");
+            table.append("<th>" + "Comment" + "</th>");
+            table.append("<th>" + "Rating" + "</th>");
+        
+            table.append("</thead>");
+            table.append("<tbody id ='myTable'>");
+            $.each(data, function (id, prod) {
+                table.append("<tr>" +
+                   
+               
+                    "<td>" + prod.tavla + "</td>" +
+                    
+                    "<td>" + prod.name + "</td>" +
+                    "<td>" + prod.comment + "</td>" +
+                    "<td>" + prod.rating + "</td>" +
+                    "</tr>"
+                );
+            });
+            table.append("</tbody>");
+        }
+
+        
+
+
+
+
+
+
+
+
+    </script>
+     <footer class="mainfooter" role="contentinfo">
+      <div class="footer-middle">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>Contact</h4>
+              <ul class="list-unstyled">          
+                <li><a href="#">Payment Center</a></li>
+                <li><a href="#">Contact Directory</a></li>
+                <li><a href="#">Forms</a></li>
+                <li><a href="#">News and Updates</a></li>
+               
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-6">
+            <!--Column1-->
+            <div class="footer-pad">
+              <h4>Policy</h4>
+              <ul class="list-unstyled">       
+                <li><a href="#">Accessibility</a></li>    
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Webmaster</a></li>
+              </ul>
+            </div>
+          </div>
+         
+          <div class="col-md-2">
+            <h4>Social</h4>
+                <ul class="social-network social-circle">
+                 <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-twitter"></i></a></li>
+                 <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-instagram"></i></a></li>
+                </ul>				
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-12 copy">
+          <p class="text-center">&copy; Copyright 2021 - Escape.  All rights reserved.</p>
+        </div>
+      </div>
+    
+    
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>

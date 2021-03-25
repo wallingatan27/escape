@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="Stylesheet" type="text/css" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+
+  <script>
+
+function getUsers() {
+            $.getJSON("http://localhost:3000/users", function (data) {
+                
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+
+
+            });
+        }
+
+function show(data) {
+            let myEmail = $("#m_txtEmail");
+            let myPassword = $("#m_txtPassword");
+           
+
+            myEmail.val(data.email);
+            myPassword.val(data.password);
+            
+
+            $('#myUpdateDeleteModal').modal('show');
+        }
+
+    function updatePassword() {
+    
+
+            let myEmail = $(" #myUpdateDeleteModal #m_txtEmail").val();
+            let myPassword = $(" #myUpdateDeleteModal #m_txtPassword").val();
+            
+           
+
+            $.ajax({
+                type: "PATCH",
+                url: "http://localhost:3000/users/" + myEmail,
+                data: JSON.stringify({ "email": myEmail ,"password": myPassword }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) { getUsers(); $('#myUpdateDeleteModal') } ,
+                failure: function (errMsg) {
+                    alert(errMsg); 
+                }
+
+            });
+        }
+
+        function myFunction() {
+  var x = document.getElementById("m_txtPassword");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function myalert() {
+  alert("Password has been changed");
+}
+
+  </script>
+
+</head>
+<body onload="getPosta()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"></a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index2.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shopping.html">Contact</a>
+            </li>
+          </ul>
+
+
+          <li class="basket">
+            <a href="profil.html">
+                <ion-icon name="person-circle-outline"></ion-icon>
+            </a>
+          </li>
+          <li class="basket">
+            <a href="shopping.html">
+              <ion-icon name="cart" md="cart"></ion-icon>Cart
+            </a>
+          </li>
+    
+        </div>
+    
+      </nav>
+<nav class="top">
+    
+
+</nav>
+<div class="si">
+      <nav class="side">
+        <div class="ord">
+          <h3>Orders:</h3>
+         
+        </div>
+          <script>
+             function getPosta() {
+            $.getJSON("http://localhost:3000/order/hamtar/profil", function (data) {
+                showProductsInTable(data);
+                $("#myInput").on("keyup", function () {
+                    var value = $(this).val().toLowerCase();
+                    $("#myTable tr").filter(function () {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+
+
+            });
+        }
+
+        function showProductsInTable(data) {
+            let table = $('#tblPostn');
+            table.empty();
+            table.append("<thead>");
+            
+            table.append("<th>" + "OrderID" + "</th>");
+            table.append("<th>" + "Date" + "</th>");
+            table.append("<th>" + "Order Status" + "</th>");
+           
+            table.append("</thead>");
+            table.append("<tbody id ='myTable'>");
+            $.each(data, function (id, order) {
+               
+               table.append("<tr>" +
+                
+                    "<td>" + order.orderID + "</td>" +
+                   "<td>" + order.create_time + "</td>" +
+                   "<td>" + order.status + "</td>" +
+                   
+                   +
+                   "</tr>"
+               );
+           });
+           table.append("</tbody>");
+            
+        }
+
+          </script>  
+          
+<div class="row" style="margin-top: 25px;">
+  <div class="col">
+      <table class="table table-striped" id="tblPostn"></table>
+
+  </div>
+  
+</div>
+<a class="pay" href="https://www.sandbox.paypal.com/se/signin">See your order history here on paypal</a>
+      </nav>
+      <main class="mainL">
+          <br>
+          <h4 >change password</h4>
+          <div id="myUpdateDeleteModal">
+            <input id="m_txtEmail" class="input-field" placeholder="Enter Email" required><br>
+           
+            <input id="m_txtPassword" type="password" class="input-field" placeholder="Enter NEW password" required>
+            <input type="checkbox" onclick="myFunction()">Show Password
+             <br> <button type="button" onclick="updatePassword(), myalert()" class="btn btn-primary">Update</button>
+          
+        </div>
+      </main>
+    </div>
+      <footer class="mainfooter" role="contentinfo">
+        <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 col-sm-6">
+              <!--Column1-->
+              <div class="footer-pad">
+                <h4>Contact</h4>
+                <ul class="list-unstyled">          
+                  <li><a href="#">Payment Center</a></li>
+                  <li><a href="#">Contact Directory</a></li>
+                  <li><a href="#">Forms</a></li>
+                  <li><a href="/admin.html">Admin</a></li>
+                 
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-5 col-sm-6">
+              <!--Column1-->
+              <div class="footer-pad">
+                <h4>Policy</h4>
+                <ul class="list-unstyled">       
+                  <li><a href="#">Accessibility</a></li>    
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Webmaster</a></li>
+                </ul>
+              </div>
+            </div>
+           
+              <div class="col-md-2">
+                  <h4>Social</h4>
+                  <ul class="social-network social-circle">
+                   <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-twitter"></i></a></li>
+                   <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-instagram"></i></a></li>
+                  </ul>				
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-12 copy">
+                  <p class="text-center">&copy; Copyright 2021 - Escape.  All rights reserved.</p>
+              </div>
+          </div>
+      
+      
+        </div>
+        </div>
+      </footer>
+</body>
+</html>

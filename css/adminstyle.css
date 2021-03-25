@@ -1,0 +1,105 @@
+/*backgrund color */
+.navbar-costum {
+    color:plum;
+    background-color: plum;
+    
+}
+/*pic to brand*/
+.logo{
+ width: 5%;
+ height: 5%;
+}
+
+/*nav color*/
+.nav-link{
+   color: white;
+}
+.nav-link:hover, .navbar-brand:hover{
+    color: wheat;
+}
+
+.navbar-brand  {
+    color:white;
+}
+
+/*sökfunktions färg  */
+.btn-outline-success {
+    background: pink;
+    color: white;
+    border: rgb(228, 46, 228);
+}
+ 
+.btn-outline-success:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: pink;
+}
+ 
+.navbar-toggler-icon {
+    background-color:wheat;
+    color: black;
+}
+
+.navbar-toggler {
+    background-color: wheat;
+    height: 20%;
+    color: black;
+}
+
+.toggler {
+    color: black;
+}
+
+.btn-outline-success:active, .btn-primary.active {
+    background: pink;
+    box-shadow: none;
+}/*slut på sök */
+/*shopping logo*/
+.cart {
+    width: 5%;
+    height: 5%;
+    margin-left: 1%;
+}
+
+.carts {
+    margin-left:1%;
+    background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 30px 30px;
+    height: 10%;
+    width: 5%;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Empty_shopping_cart_clip_art.svg/893px-Empty_shopping_cart_clip_art.svg.png");
+}
+
+.btn-primary {
+    color: white;
+    background-color: plum;
+    border: none;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: pink;
+    border: none;
+}
+
+.text {
+    
+    margin-top: 15%;
+    margin-bottom: 10%;
+    color: pink;
+    font-size: xx-large;
+    
+}
+
+.page-footer{
+    margin-top: 15px;
+    color: pink;
+    border:1px;
+    border-color: black;
+    background-color: rgb(248, 218, 248);
+}
+
+.fot{
+    
+    color: black;
+
+}

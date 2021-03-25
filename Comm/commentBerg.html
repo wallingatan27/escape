@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+     
+        <link rel="Stylesheet" type="text/css" href="/style.css">
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"></a>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/index2.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login.html">Login</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="shopping.html">Contact</a>
+                </li>
+              </ul>
+      
+      
+              <li class="basket">
+                <a href="profil.html">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                </a>
+              </li>
+              <li class="basket">
+                <a href="shopping.html">
+                  <ion-icon name="cart" md="cart"></ion-icon>Cart
+                </a>
+              </li>
+        
+            </div>
+        
+          </nav>
+          <h1>Leave a comment</h1>
+
+<form name = "form1" action="/db/comment/berg" method = "POST">    
+    <div class = "container"> 
+        <div class = "form_group">    
+            <label>Art:</label>    
+            <input type = "text" name = "art" value = "Berg" readonly/>    
+        </div>     
+        <div class = "form_group">    
+            <label>Product:</label>    
+            <input type = "text" name = "tavla" value = "" required/>    
+        </div>    
+        <div class = "form_group">    
+            <label>Name:</label>    
+            <input type = "text" name = "name" value = "" required />    
+        </div>    
+        <div class = "form_group">    
+            <label>Comment:</label>    
+            <input type = "text" name = "comment" value = "" required/>    
+        </div>    
+        <div class = "form_group"> 
+            <label>Rating:</label>    
+            <select id="rating" name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select> 
+        </div>    
+        <button type="submit">Add comment</button>
+    </div>    
+</form>   
+<footer class="mainfooter" role="contentinfo">
+    <div class="footer-middle">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-6">
+          <!--Column1-->
+          <div class="footer-pad">
+            <h4>Contact</h4>
+            <ul class="list-unstyled">          
+              <li><a href="#">Payment Center</a></li>
+              <li><a href="#">Contact Directory</a></li>
+              <li><a href="#">Forms</a></li>
+              <li><a href="#">News and Updates</a></li>
+             
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-5 col-sm-6">
+          <!--Column1-->
+          <div class="footer-pad">
+            <h4>Policy</h4>
+            <ul class="list-unstyled">       
+              <li><a href="#">Accessibility</a></li>    
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Webmaster</a></li>
+            </ul>
+          </div>
+        </div>
+       
+          <div class="col-md-2">
+              <h4>Social</h4>
+              <ul class="social-network social-circle">
+               <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-instagram"></i></a></li>
+              </ul>				
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 copy">
+              <p class="text-center">&copy; Copyright 2021 - Escape.  All rights reserved.</p>
+          </div>
+      </div>
+  
+  
+    </div>
+    </div>
+  </footer> 
+</body>
+</html>
+

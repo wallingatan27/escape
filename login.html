@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="66074815010-p90ousr5u6d51vu651o0hvj3m9mce2p2.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Member</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index2.html">Home</a>
+        </li>
+        <li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				  </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shopping.html">Contact</a>
+        </li>
+      </ul>
+
+
+      <li class="basket">
+        <a href="profil.html">
+            <ion-icon name="person-circle-outline"></ion-icon>
+        </a>
+      </li>
+     
+
+    </div>
+
+  </nav>
+
+
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log in</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="g-signin2" data-onsuccess="onSignIn" action="/gmaillogin" data-theme="dark" method="POST" ></div>
+            <a href="#" onclick="signOut();">Sign out</a>
+            <form id="login" class="input-group" action="/users/login" method="POST">
+                <input id="email" name="email" class="input-field" placeholder="Enter Email" required>
+                <input type="password" id="password" name="password" class="input-field" placeholder="Enter password" required>
+                <input type="checkbox" class="chech-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log in</button>   
+                
+            </form>
+            
+            <form id="register" class="input-group" action="/db/user/post" method="POST">
+             <input for="email" type="email" id="email" name="email" class="input-field" placeholder="email" required>
+             <input for="firstname" type="firstname" id="firstname" name="firstname" class="input-field" placeholder="Name" required>
+             <input for="lastname" type="lastname" id="lastname" name="lastname" class="input-field" placeholder="Lastname" required>
+             <input for="password" type="password" id="password" name="password" class="input-field" placeholder="Password" required>
+             <input type="checkbox" class="chech-box"><span>I agree to the terms & conditions</span>
+             <button type="submit" class="submit-btn">Register</button>   
+         </form>
+        
+        </div>
+       
+       
+    </div>
+    
+    <script>
+     var x = document.getElementById("login");
+     var y = document.getElementById("register");
+     var z = document.getElementById("btn");
+
+     function register(){
+         x.style.left= "-400px";
+         y.style.left = "50px";
+         z.style.left = "110px";
+     }
+
+     function login(){
+         x.style.left = "50px";
+         y.style.left = "450px";
+         z.style.left = "0";
+
+         
+     }
+    
+           function onSignIn(googleUser) {
+                // Useful data for your client-side scripts:
+                var profile = googleUser.getBasicProfile();
+                console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                console.log('Full Name: ' + profile.getName());
+                console.log('Given Name: ' + profile.getGivenName());
+                console.log('Family Name: ' + profile.getFamilyName());
+                console.log("Image URL: " + profile.getImageUrl());
+                console.log("Email: " + profile.getEmail());
+        
+                // The ID token you need to pass to your backend:
+                var id_token = googleUser.getAuthResponse().id_token;
+                console.log("ID Token: " + id_token);
+
+              alert('You are logged in '+ profile.getEmail());
+                return fetch('/gmaillogin', {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      id_token: id_token,
+                      getName: profile.getName()
+                      
+                    })
+                    
+                });
+              }
+              
+            </script>
+           
+        <script>
+          function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+              console.log('User signed out.');
+            });
+          }
+        </script>
+ </script>
+</body>
+</html>
